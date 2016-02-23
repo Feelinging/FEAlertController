@@ -24,4 +24,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)hey:(UIButton *)sender {
+    
+}
+
 @end
