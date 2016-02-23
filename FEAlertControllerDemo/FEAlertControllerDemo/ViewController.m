@@ -26,8 +26,8 @@
 }
 
 - (IBAction)hey:(UIButton *)sender {
-    FEAlertController *alertController = [FEAlertController alertWithTitle:@"hey" image:nil description:@"hhhhh" buttons:@[@"啊啊啊"] callback:^(NSInteger buttonIndex) {
-        
+    FEAlertController *alertController = [FEAlertController alertWithTitle:@"hey" image:nil description:@"aa" buttons:@[@"啊啊啊"] callback:^(FEAlertController *alertController, NSInteger buttonIndex) {
+        [alertController dismiss];
     }];
     [alertController showInViewController:self];
 }

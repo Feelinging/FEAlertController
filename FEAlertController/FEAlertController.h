@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^FEAlertControllerCallback)(NSInteger buttonIndex);
+@class FEAlertController;
+
+typedef void(^FEAlertControllerCallback)(FEAlertController *alertController, NSInteger buttonIndex);
 
 @interface FEAlertController : UIViewController
 

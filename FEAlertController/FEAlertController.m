@@ -9,9 +9,10 @@
 #import "FEAlertController.h"
 #import "FEAlertContentView.h"
 
-@interface FEAlertController ()<UIGestureRecognizerDelegate>
+@interface FEAlertController ()<UIGestureRecognizerDelegate,FEAlertContentViewDelegate>
 
 @property (nonatomic, strong) FEAlertContentView *contentView;
+@property (nonatomic, copy) FEAlertControllerCallback callback;
 
 @end
 
@@ -40,6 +41,7 @@
 -(FEAlertContentView *)contentView{
     if (!_contentView) {
         _contentView = [FEAlertContentView instanceWithXIB];
+        _contentView.delegate = self;
         _contentView.titleLabel.text = self.alertTitle;
         _contentView.imageView.image = self.alertImage;
         _contentView.descriptionLabel.text = self.alertDescription;
@@ -64,7 +66,7 @@
     alertController.alertImage = image;
     alertController.alertDescription = description;
     alertController.alertButtons = buttons;
-    
+    alertController.callback = callback;
     return alertController;
 }
 
@@ -100,6 +102,14 @@
     
     if ([self.alertDescription length] == 0) {
         [self.contentView.descriptionLabel removeFromSuperview];
+    }
+}
+
+#pragma mark FEAlertContentViewDelegate
+
+-(void)alertControllerButtonAction:(UIButton *)button{
+    if (self.callback) {
+        self.callback(self,button);
     }
 }
 
