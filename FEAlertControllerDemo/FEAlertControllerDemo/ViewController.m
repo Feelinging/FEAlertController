@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FEAlertController.h"
 
 @interface ViewController ()
 
@@ -25,7 +26,10 @@
 }
 
 - (IBAction)hey:(UIButton *)sender {
-    
+    FEAlertController *alertController = [FEAlertController alertWithTitle:@"hey" image:nil description:@"hhhhh" buttons:@[@"啊啊啊"] callback:^(NSInteger buttonIndex) {
+        
+    }];
+    [alertController showInViewController:self];
 }
 
 @end

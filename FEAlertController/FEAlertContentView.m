@@ -10,4 +10,13 @@
 
 @implementation FEAlertContentView
 
++(instancetype)instanceWithXIB{
+    return [[[NSBundle mainBundle] loadNibNamed:@"FEAlertContentView" owner:nil options:nil] firstObject];
+}
+
+//
+//-(CGSize)intrinsicContentSize{
+//    return CGSizeMake(500, 500);
+//}
+
 @end
