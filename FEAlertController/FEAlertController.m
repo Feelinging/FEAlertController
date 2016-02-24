@@ -11,7 +11,6 @@
 
 @interface FEAlertController ()<UIGestureRecognizerDelegate,FEAlertContentViewDelegate>
 
-@property (nonatomic, strong) FEAlertContentView *contentView;
 @property (nonatomic, copy) FEAlertControllerCallback callback;
 
 @end
@@ -20,6 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // DEBUG
+    CGFloat contentViewWidth = self.contentView.frame.size.width;
+    CGFloat contentViewHeight = self.contentView.frame.size.height;
+    self.contentView.frame = CGRectMake(self.view.bounds.size.width / 2.0 - contentViewWidth / 2.0,
+                                        self.view.bounds.size.height / 2.0 - contentViewHeight / 2.0,
+                                        contentViewWidth,
+                                        contentViewHeight);
     
     // Add content view
     [self.view addSubview:self.contentView];
@@ -60,12 +67,22 @@
 
 #pragma mark Show & Dsimiss
 
-+(instancetype)alertWithTitle:(NSString *)title image:(UIImage *)image description:(NSString *)description buttons:(NSArray *)buttons callback:(FEAlertControllerCallback)callback{
++(instancetype)alertWithTitle:(NSString *)title image:(UIImage *)image description:(NSString *)description buttons:(NSArray *)buttons highlightButtonIndex:(NSInteger)highlightButtonIndex callback:(FEAlertControllerCallback)callback{
     FEAlertController *alertController = [[FEAlertController alloc] init];
     alertController.alertTitle = title;
     alertController.alertImage = image;
     alertController.alertDescription = description;
     alertController.alertButtons = buttons;
+    
+    // highlightButtonIndex
+    if (highlightButtonIndex > [buttons count] - 1) {
+        alertController.highlightButtonIndex = [buttons count] - 1;
+    }else if (highlightButtonIndex < 0) {
+        alertController.highlightButtonIndex = 0;
+    }else{
+        alertController.highlightButtonIndex = highlightButtonIndex;
+    }
+    
     alertController.callback = callback;
     return alertController;
 }
@@ -90,6 +107,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark -
 
 -(void)prepareDisplay{
     if ([self.alertTitle length] == 0) {
@@ -103,13 +121,27 @@
     if ([self.alertDescription length] == 0) {
         [self.contentView.descriptionLabel removeFromSuperview];
     }
+    
+    // most 2 button
+    NSMutableArray *alertButtons = [self.alertButtons mutableCopy];
+    if ([self.alertButtons count] > 2) {
+        [alertButtons removeObjectsInRange:NSMakeRange(1, [alertButtons count]-2)];
+    }else if ([alertButtons count] == 1) {
+        [self.contentView.buttonRight removeFromSuperview];
+        self.contentView.buttonLeftLeadingConstraint.active = NO;
+    }
+    
+    [self.contentView fillButtons:alertButtons];
+    [self.contentView highlightButtonByIndex:self.highlightButtonIndex];
 }
+
 
 #pragma mark FEAlertContentViewDelegate
 
 -(void)alertControllerButtonAction:(UIButton *)button{
+    NSInteger clickButtonIndex = (button == self.contentView.buttonLeft ? 0 : 1);
     if (self.callback) {
-        self.callback(self,button);
+        self.callback(self,clickButtonIndex);
     }
 }
 

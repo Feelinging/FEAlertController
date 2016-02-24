@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FEAlertContentView.h"
 
 @class FEAlertController;
 
@@ -14,10 +15,13 @@ typedef void(^FEAlertControllerCallback)(FEAlertController *alertController, NSI
 
 @interface FEAlertController : UIViewController
 
+@property (nonatomic, strong) FEAlertContentView *contentView;
+
 @property (nonatomic, copy) NSString *alertTitle;
 @property (nonatomic, strong) UIImage *alertImage;
 @property (nonatomic, copy) NSString *alertDescription;
 @property (nonatomic, strong) NSArray *alertButtons;
+@property (nonatomic, assign) NSInteger highlightButtonIndex;
 
 /**
  *  method for initialization
@@ -34,6 +38,7 @@ typedef void(^FEAlertControllerCallback)(FEAlertController *alertController, NSI
                         image:(UIImage *)image
                   description:(NSString *)description
                       buttons:(NSArray *)buttons
+         highlightButtonIndex:(NSInteger)highlightButtonIndex
                      callback:(FEAlertControllerCallback)callback;
 
 -(void)showInViewController:(UIViewController *)viewController;

@@ -20,4 +20,44 @@
     }
 }
 
+#pragma mark -
+
+-(void)highlightButtonByIndex:(NSInteger)buttonIndex{
+    UIButton *highlightButton;
+    UIButton *otherButton;
+    
+    if (buttonIndex == 0) {
+        highlightButton = self.buttonLeft;
+        otherButton = self.buttonRight;
+    }
+    
+    if (buttonIndex == 1) {
+        highlightButton = self.buttonRight;
+        otherButton = self.buttonLeft;
+    }
+    
+    [highlightButton setBackgroundColor:[UIColor colorWithRed:1.000 green:0.796 blue:0.310 alpha:1.000]];
+    [highlightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [otherButton setBackgroundColor:[UIColor clearColor]];
+    [otherButton setTitleColor:[UIColor colorWithWhite:0.600 alpha:1.000] forState:UIControlStateNormal];
+}
+
+-(void)fillButtons:(NSArray *)buttons{
+    if ([buttons count] < 1) {
+        return;
+    }
+    
+    NSString *firstButtonTitle = [buttons firstObject];
+    [self.buttonLeft setTitle:firstButtonTitle forState:UIControlStateNormal];
+    
+    if ([buttons count] >= 2) {
+        NSString *secendButtonTitle = buttons[1];
+        if (secendButtonTitle) {
+            [self.buttonRight setTitle:secendButtonTitle forState:UIControlStateNormal];
+        }
+    }
+
+}
+
 @end

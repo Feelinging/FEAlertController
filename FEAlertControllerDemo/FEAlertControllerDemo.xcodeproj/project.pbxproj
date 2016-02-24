@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BC760381C7D54C200576F94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC760371C7D54C200576F94 /* Images.xcassets */; };
 		0BD4B8061C7C0FD1003313D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4B8051C7C0FD1003313D0 /* main.m */; };
 		0BD4B8091C7C0FD1003313D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4B8081C7C0FD1003313D0 /* AppDelegate.m */; };
 		0BD4B80C1C7C0FD1003313D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4B80B1C7C0FD1003313D0 /* ViewController.m */; };
 		0BD4B80F1C7C0FD1003313D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BD4B80D1C7C0FD1003313D0 /* Main.storyboard */; };
-		0BD4B8111C7C0FD1003313D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BD4B8101C7C0FD1003313D0 /* Assets.xcassets */; };
 		0BD4B8141C7C0FD1003313D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BD4B8121C7C0FD1003313D0 /* LaunchScreen.storyboard */; };
 		0BD4B82D1C7C2E37003313D0 /* FEAlertContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4B8291C7C2E37003313D0 /* FEAlertContentView.m */; };
 		0BD4B82E1C7C2E37003313D0 /* FEAlertContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD4B82A1C7C2E37003313D0 /* FEAlertContentView.xib */; };
@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BC760371C7D54C200576F94 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0BD4B8011C7C0FD1003313D0 /* FEAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FEAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD4B8051C7C0FD1003313D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0BD4B8071C7C0FD1003313D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,7 +27,6 @@
 		0BD4B80A1C7C0FD1003313D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0BD4B80B1C7C0FD1003313D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0BD4B80E1C7C0FD1003313D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0BD4B8101C7C0FD1003313D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BD4B8131C7C0FD1003313D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BD4B8151C7C0FD1003313D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BD4B8281C7C2E37003313D0 /* FEAlertContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEAlertContentView.h; sourceTree = "<group>"; };
@@ -72,9 +72,9 @@
 				0BD4B80A1C7C0FD1003313D0 /* ViewController.h */,
 				0BD4B80B1C7C0FD1003313D0 /* ViewController.m */,
 				0BD4B80D1C7C0FD1003313D0 /* Main.storyboard */,
-				0BD4B8101C7C0FD1003313D0 /* Assets.xcassets */,
 				0BD4B8121C7C0FD1003313D0 /* LaunchScreen.storyboard */,
 				0BD4B8151C7C0FD1003313D0 /* Info.plist */,
+				0BC760371C7D54C200576F94 /* Images.xcassets */,
 				0BD4B8041C7C0FD1003313D0 /* Supporting Files */,
 			);
 			path = FEAlertControllerDemo;
@@ -159,8 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BD4B82E1C7C2E37003313D0 /* FEAlertContentView.xib in Resources */,
+				0BC760381C7D54C200576F94 /* Images.xcassets in Resources */,
 				0BD4B8141C7C0FD1003313D0 /* LaunchScreen.storyboard in Resources */,
-				0BD4B8111C7C0FD1003313D0 /* Assets.xcassets in Resources */,
 				0BD4B80F1C7C0FD1003313D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = FEAlertControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaced.FEAlertControllerDemo;
@@ -297,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = FEAlertControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaced.FEAlertControllerDemo;
@@ -323,6 +325,7 @@
 				0BD4B81A1C7C0FD1003313D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

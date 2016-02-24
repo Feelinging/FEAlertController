@@ -26,6 +26,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonLeft;
 @property (weak, nonatomic) IBOutlet UIButton *buttonRight;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonLeftLeadingConstraint;
+
 - (IBAction)buttonAction:(UIButton *)sender;
+
+-(void)highlightButtonByIndex:(NSInteger)buttonIndex;
+-(void)fillButtons:(NSArray *)buttons;
 
 @end

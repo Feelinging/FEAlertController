@@ -26,9 +26,20 @@
 }
 
 - (IBAction)hey:(UIButton *)sender {
-    FEAlertController *alertController = [FEAlertController alertWithTitle:@"hey" image:nil description:@"aa" buttons:@[@"啊啊啊"] callback:^(FEAlertController *alertController, NSInteger buttonIndex) {
-        [alertController dismiss];
+    FEAlertController *alertController = [FEAlertController alertWithTitle:@"What are you doing?"
+                                                                     image:[UIImage imageNamed:@"ahopps"]
+                                                               description:@"Can you guess what I\'m going to do?"
+                                                                   buttons:@[@"Read book",@"Coding"]
+                                                      highlightButtonIndex:1
+                                                                  callback:^(FEAlertController *alertController, NSInteger buttonIndex) {
+                                                                      NSLog(@"click button index : %@", @(buttonIndex));
+                                                                      [alertController dismiss];
     }];
+
+    // Customize
+//    alertController.contentView.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
+//    alertController.contentView.descriptionLabel.textColor = [UIColor redColor];
+    
     [alertController showInViewController:self];
 }
 
