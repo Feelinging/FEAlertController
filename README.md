@@ -45,7 +45,7 @@ dismiss
 
 About these properties
 
-![screenshot](https://raw.github.com/Feelinging/FEAlertController/master/screenshot.png)
+![screenshot](https://raw.github.com/Feelinging/FEAlertController/master/properties.png)
 
 ### Customiz
 
