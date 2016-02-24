@@ -32,7 +32,7 @@
     [self.view addSubview:self.contentView];
     
     // Tap background view
-    UITapGestureRecognizer *tapBackgroundViewGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
+    UITapGestureRecognizer *tapBackgroundViewGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackgroundAction)];
     tapBackgroundViewGestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:tapBackgroundViewGestureRecognizer];
     
@@ -101,6 +101,12 @@
     [self prepareDisplay];
     
     [viewController presentViewController:self animated:YES completion:nil];
+}
+
+-(void)tapBackgroundAction{
+    if (self.shouldDismissOnBackgroundTouch) {
+        [self dismiss];
+    }
 }
 
 -(void)dismiss{

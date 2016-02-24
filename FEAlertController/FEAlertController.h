@@ -24,6 +24,11 @@ typedef void(^FEAlertControllerCallback)(FEAlertController *alertController, NSI
 @property (nonatomic, assign) NSInteger highlightButtonIndex;
 
 /**
+ *  If YES, then popup will get dismissed when background is touched. default = NO.
+ */
+@property (assign, nonatomic) BOOL shouldDismissOnBackgroundTouch;
+
+/**
  *  method for initialization
  *
  *  @param title       At the top of the central
