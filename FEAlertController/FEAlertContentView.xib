@@ -71,6 +71,7 @@
                 <constraint firstItem="er0-zg-fIK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0bf-Tp-ksl"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1TK-Di-SaE"/>
                 <constraint firstItem="ThD-Gh-aDf" firstAttribute="top" secondItem="SqO-lp-mdY" secondAttribute="bottom" constant="20" id="1Ye-uU-HoN"/>
+                <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ThD-Gh-aDf" secondAttribute="bottom" priority="900" constant="30" id="40w-OH-Cir"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" secondItem="er0-zg-fIK" secondAttribute="bottom" constant="30" id="Ct3-jz-vth"/>
                 <constraint firstItem="SqO-lp-mdY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="29" id="Dwo-Xt-0d1"/>
                 <constraint firstItem="SqO-lp-mdY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IKJ-dG-cuF"/>
@@ -85,6 +86,7 @@
                 <constraint firstAttribute="trailing" secondItem="0y5-7D-TfE" secondAttribute="trailing" constant="20" id="avy-NJ-zQv"/>
                 <constraint firstItem="ThD-Gh-aDf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="900" constant="8" id="dHn-xo-hdi"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" priority="900" id="dpU-kR-jdL"/>
+                <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SqO-lp-mdY" secondAttribute="bottom" constant="30" id="f27-QT-Qh4"/>
                 <constraint firstItem="ThD-Gh-aDf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mL3-4X-4nE"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="er0-zg-fIK" secondAttribute="trailing" constant="20" id="nQ4-4b-jPe"/>
             </constraints>
