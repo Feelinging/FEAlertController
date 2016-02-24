@@ -20,14 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // DEBUG
-    CGFloat contentViewWidth = self.contentView.frame.size.width;
-    CGFloat contentViewHeight = self.contentView.frame.size.height;
-    self.contentView.frame = CGRectMake(self.view.bounds.size.width / 2.0 - contentViewWidth / 2.0,
-                                        self.view.bounds.size.height / 2.0 - contentViewHeight / 2.0,
-                                        contentViewWidth,
-                                        contentViewHeight);
-    
     // Add content view
     [self.view addSubview:self.contentView];
     
@@ -36,6 +28,16 @@
     tapBackgroundViewGestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:tapBackgroundViewGestureRecognizer];
     
+}
+
+-(void)viewDidLayoutSubviews{
+    // calc content view size
+    CGFloat contentViewWidth = 258.0;
+    CGFloat contentViewHeight = self.contentView.buttonLeft.frame.origin.y + self.contentView.buttonLeft.frame.size.height + 20;
+    self.contentView.frame = CGRectMake(self.view.bounds.size.width / 2.0 - contentViewWidth / 2.0,
+                                        self.view.bounds.size.height / 2.0 - contentViewHeight / 2.0,
+                                        contentViewWidth,
+                                        contentViewHeight);
 }
 
 - (void)didReceiveMemoryWarning {
