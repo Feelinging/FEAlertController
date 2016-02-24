@@ -11,13 +11,18 @@ build a wheel for FeelingV2
 
 ### Useage
 
-import
+##### import
 
 ```
 #import "FEAlertController.h"
 ```
 
-init
+##### init
+
+- title can be nil
+- image can be nil
+- description can be nil
+- buttons maximum of 2
 
 ```
 FEAlertController *alertController = [FEAlertController alertWithTitle:@"What are you doing?"
@@ -31,19 +36,19 @@ FEAlertController *alertController = [FEAlertController alertWithTitle:@"What ar
 }];
 ```
 
-show
+##### show
 
 ```
 [alertController showInViewController:self];
 ```
 
-dismiss
+##### dismiss
 
 ```
 [alertController dismiss];
 ```
 
-About these properties
+##### About these properties
 
 ![screenshot](https://raw.github.com/Feelinging/FEAlertController/master/properties.png)
 
