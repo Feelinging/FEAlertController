@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonLeft;
 @property (weak, nonatomic) IBOutlet UIButton *buttonRight;
 
+@property (nonatomic, assign) CGFloat cornerRadius UI_APPEARANCE_SELECTOR;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonLeftLeadingConstraint;
 
 - (IBAction)buttonAction:(UIButton *)sender;

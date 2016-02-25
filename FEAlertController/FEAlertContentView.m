@@ -20,6 +20,13 @@
     }
 }
 
+-(void)setCornerRadius:(CGFloat)cornerRadius{
+    _cornerRadius = cornerRadius;
+    
+    // apply style
+    self.layer.cornerRadius = cornerRadius;
+}
+
 #pragma mark -
 
 -(void)highlightButtonByIndex:(NSInteger)buttonIndex{
