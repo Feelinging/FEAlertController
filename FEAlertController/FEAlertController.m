@@ -27,7 +27,6 @@
     UITapGestureRecognizer *tapBackgroundViewGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackgroundAction)];
     tapBackgroundViewGestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:tapBackgroundViewGestureRecognizer];
-    
 }
 
 -(void)viewDidLayoutSubviews{
@@ -45,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - 
+#pragma mark Setter & Getter
 
 -(FEAlertContentView *)contentView{
     if (!_contentView) {
@@ -58,7 +57,7 @@
     return _contentView;
 }
 
-#pragma mark -
+#pragma mark UIGestureRecognizerDelegate
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
     if (touch.view == self.view) {
