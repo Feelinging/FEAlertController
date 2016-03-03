@@ -27,6 +27,9 @@
     UITapGestureRecognizer *tapBackgroundViewGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackgroundAction)];
     tapBackgroundViewGestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:tapBackgroundViewGestureRecognizer];
+    
+    // Background shadow
+    self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
 }
 
 -(void)viewDidLayoutSubviews{
