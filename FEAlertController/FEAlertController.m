@@ -32,7 +32,7 @@
 -(void)viewDidLayoutSubviews{
     // calc content view size
     CGFloat contentViewWidth = 258.0;
-    CGFloat contentViewHeight = self.contentView.buttonLeft.frame.origin.y + self.contentView.buttonLeft.frame.size.height + 20;
+    CGFloat contentViewHeight = self.contentView.buttonLeft.frame.origin.y + self.contentView.buttonLeft.frame.size.height + 10;
     self.contentView.frame = CGRectMake(self.view.bounds.size.width / 2.0 - contentViewWidth / 2.0,
                                         self.view.bounds.size.height / 2.0 - contentViewHeight / 2.0,
                                         contentViewWidth,

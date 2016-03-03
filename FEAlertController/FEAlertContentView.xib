@@ -28,13 +28,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er0-zg-fIK">
-                    <rect key="frame" x="97" y="207" width="64" height="14.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <rect key="frame" x="90.5" y="185" width="77" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-Dl-dnF">
-                    <rect key="frame" x="20" y="251" width="104.5" height="40"/>
+                    <rect key="frame" x="20" y="218" width="104.5" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Qy1-vc-hyg"/>
                         <constraint firstAttribute="width" priority="900" constant="120" id="TOf-B7-Azm"/>
@@ -52,7 +52,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0y5-7D-TfE">
-                    <rect key="frame" x="134" y="251" width="104.5" height="40"/>
+                    <rect key="frame" x="134" y="218" width="104.5" height="40"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -72,14 +72,14 @@
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1TK-Di-SaE"/>
                 <constraint firstItem="ThD-Gh-aDf" firstAttribute="top" secondItem="SqO-lp-mdY" secondAttribute="bottom" constant="20" id="1Ye-uU-HoN"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ThD-Gh-aDf" secondAttribute="bottom" priority="900" constant="30" id="40w-OH-Cir"/>
-                <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" secondItem="er0-zg-fIK" secondAttribute="bottom" constant="30" id="Ct3-jz-vth"/>
+                <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" secondItem="er0-zg-fIK" secondAttribute="bottom" constant="15" id="Ct3-jz-vth"/>
                 <constraint firstItem="SqO-lp-mdY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="29" id="Dwo-Xt-0d1"/>
                 <constraint firstItem="SqO-lp-mdY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IKJ-dG-cuF"/>
-                <constraint firstItem="er0-zg-fIK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="J57-gF-A1L"/>
+                <constraint firstItem="er0-zg-fIK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="J57-gF-A1L"/>
                 <constraint firstItem="0y5-7D-TfE" firstAttribute="top" secondItem="g9j-Dl-dnF" secondAttribute="top" id="P44-ab-F8O"/>
                 <constraint firstItem="er0-zg-fIK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="800" constant="10" id="SFA-tN-6UM"/>
                 <constraint firstItem="0y5-7D-TfE" firstAttribute="height" secondItem="g9j-Dl-dnF" secondAttribute="height" id="T52-n0-yBU"/>
-                <constraint firstItem="er0-zg-fIK" firstAttribute="top" secondItem="ThD-Gh-aDf" secondAttribute="bottom" constant="30" id="W70-lU-F1a"/>
+                <constraint firstItem="er0-zg-fIK" firstAttribute="top" secondItem="ThD-Gh-aDf" secondAttribute="bottom" constant="8" id="W70-lU-F1a"/>
                 <constraint firstItem="er0-zg-fIK" firstAttribute="top" secondItem="SqO-lp-mdY" secondAttribute="bottom" priority="900" constant="30" id="XEN-BU-1Ak"/>
                 <constraint firstItem="0y5-7D-TfE" firstAttribute="leading" secondItem="g9j-Dl-dnF" secondAttribute="trailing" constant="10" id="Xst-Gy-xfD"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="width" secondItem="0y5-7D-TfE" secondAttribute="width" id="ZfE-7p-EVV"/>
@@ -88,7 +88,7 @@
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" priority="900" id="dpU-kR-jdL"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SqO-lp-mdY" secondAttribute="bottom" constant="30" id="f27-QT-Qh4"/>
                 <constraint firstItem="ThD-Gh-aDf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mL3-4X-4nE"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="er0-zg-fIK" secondAttribute="trailing" constant="20" id="nQ4-4b-jPe"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="er0-zg-fIK" secondAttribute="trailing" constant="15" id="nQ4-4b-jPe"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
