@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonRight;
 
 @property (nonatomic, assign) CGFloat cornerRadius UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) UIColor *descriptionTextColor UI_APPEARANCE_SELECTOR;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonLeftLeadingConstraint;
 

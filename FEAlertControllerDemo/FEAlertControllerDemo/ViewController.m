@@ -20,6 +20,9 @@
     
     // Appearance Content View Corner Radius
     [[FEAlertContentView appearance] setCornerRadius:10.0];
+    
+    // Appearance Content View description text color
+    [[FEAlertContentView appearance] setDescriptionTextColor:[UIColor colorWithRed:1.000 green:0.796 blue:0.310 alpha:1.000]];
 }
 
 - (IBAction)hey:(UIButton *)sender {
