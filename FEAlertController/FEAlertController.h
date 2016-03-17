@@ -19,6 +19,7 @@ typedef void(^FEAlertControllerCallback)(FEAlertController *alertController, NSI
 
 @property (nonatomic, copy) NSString *alertTitle;
 @property (nonatomic, strong) UIImage *alertImage;
+@property (nonatomic, strong) NSArray *alertAnimationImages; // for animation
 @property (nonatomic, copy) NSString *alertDescription;
 @property (nonatomic, strong) NSArray *alertButtons;
 @property (nonatomic, assign) NSInteger highlightButtonIndex;

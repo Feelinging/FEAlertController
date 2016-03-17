@@ -20,7 +20,7 @@
                     <color key="textColor" red="1" green="0.79607843137254897" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ThD-Gh-aDf">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ThD-Gh-aDf">
                     <rect key="frame" x="25" y="67" width="209" height="110"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="209" id="Wmf-oq-G98"/>
@@ -83,8 +83,9 @@
                 <constraint firstItem="er0-zg-fIK" firstAttribute="top" secondItem="SqO-lp-mdY" secondAttribute="bottom" priority="900" constant="30" id="XEN-BU-1Ak"/>
                 <constraint firstItem="0y5-7D-TfE" firstAttribute="leading" secondItem="g9j-Dl-dnF" secondAttribute="trailing" constant="10" id="Xst-Gy-xfD"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="width" secondItem="0y5-7D-TfE" secondAttribute="width" id="ZfE-7p-EVV"/>
+                <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="aZK-SX-2Lc"/>
                 <constraint firstAttribute="trailing" secondItem="0y5-7D-TfE" secondAttribute="trailing" constant="20" id="avy-NJ-zQv"/>
-                <constraint firstItem="ThD-Gh-aDf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="900" constant="8" id="dHn-xo-hdi"/>
+                <constraint firstItem="ThD-Gh-aDf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" priority="900" constant="20" id="dHn-xo-hdi"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" priority="900" id="dpU-kR-jdL"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SqO-lp-mdY" secondAttribute="bottom" constant="30" id="f27-QT-Qh4"/>
                 <constraint firstItem="ThD-Gh-aDf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mL3-4X-4nE"/>

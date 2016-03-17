@@ -30,16 +30,26 @@
     
     // Background shadow
     self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
-}
+    
+    // contentView layout
+    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
 
--(void)viewDidLayoutSubviews{
-    // calc content view size
-    CGFloat contentViewWidth = 258.0;
-    CGFloat contentViewHeight = self.contentView.buttonLeft.frame.origin.y + self.contentView.buttonLeft.frame.size.height + 10;
-    self.contentView.frame = CGRectMake(self.view.bounds.size.width / 2.0 - contentViewWidth / 2.0,
-                                        self.view.bounds.size.height / 2.0 - contentViewHeight / 2.0,
-                                        contentViewWidth,
-                                        contentViewHeight);
+    // CenterY
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.contentView
+                                                          attribute:NSLayoutAttributeCenterY
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterY
+                                                         multiplier:1
+                                                           constant:0]];
+    // CenterX
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.contentView
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1
+                                                           constant:0]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,8 +64,15 @@
         _contentView = [FEAlertContentView instanceWithXIB];
         _contentView.delegate = self;
         _contentView.titleLabel.text = self.alertTitle;
-        _contentView.imageView.image = self.alertImage;
         _contentView.descriptionLabel.text = self.alertDescription;
+        _contentView.clipsToBounds = YES;
+        
+        // image or images
+        if (self.alertImage) {
+            _contentView.imageView.image = self.alertImage;
+        }else if ([self.alertAnimationImages count] > 0){
+            _contentView.imageView.animationImages = self.alertAnimationImages;
+        }
     }
     return _contentView;
 }
@@ -124,7 +141,7 @@
         [self.contentView.titleLabel removeFromSuperview];
     }
     
-    if (!self.alertImage) {
+    if (!self.alertImage && [self.alertAnimationImages count] < 1) {
         [self.contentView.imageView removeFromSuperview];
     }
     
@@ -139,10 +156,19 @@
     }else if ([alertButtons count] == 1) {
         [self.contentView.buttonRight removeFromSuperview];
         self.contentView.buttonLeftLeadingConstraint.active = NO;
+    }else if (self.alertButtons == 0){
+        [self.contentView.buttonLeft removeFromSuperview];
+        [self.contentView.buttonRight removeFromSuperview];
     }
     
     [self.contentView fillButtons:alertButtons];
     [self.contentView highlightButtonByIndex:self.highlightButtonIndex];
+    
+    // begin animation
+    if ([self.alertAnimationImages count] > 1) {
+        self.contentView.imageView.animationDuration = 2.0;
+        [self.contentView.imageView startAnimating];
+    }
 }
 
 
