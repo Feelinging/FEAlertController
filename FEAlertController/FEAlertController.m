@@ -12,6 +12,7 @@
 @interface FEAlertController ()<UIGestureRecognizerDelegate,FEAlertContentViewDelegate>
 
 @property (nonatomic, copy) FEAlertControllerCallback callback;
+@property (nonatomic, strong) NSLayoutConstraint *conentViewHeightConstraint;
 
 @end
 
@@ -34,6 +35,32 @@
     // contentView layout
     self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
 
+    
+    // Width
+    CGFloat contentViewWidth = 258.0;
+    if (!self.contentView.buttonLeft.superview) {
+        contentViewWidth = 220.0;
+    }
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.contentView
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeNotAnAttribute
+                                                         multiplier:1
+                                                           constant:contentViewWidth]];
+    
+    // Height
+    NSLayoutConstraint *conentViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
+                                                                        attribute:NSLayoutAttributeHeight
+                                                                        relatedBy:NSLayoutRelationEqual
+                                                                           toItem:nil
+                                                                        attribute:NSLayoutAttributeNotAnAttribute
+                                                                       multiplier:1
+                                                                         constant:CGRectGetHeight(self.contentView.frame)];
+    [self.view addConstraint:conentViewHeightConstraint];
+    self.conentViewHeightConstraint = conentViewHeightConstraint;
+    
     // CenterY
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.contentView
                                                           attribute:NSLayoutAttributeCenterY
@@ -50,6 +77,23 @@
                                                           attribute:NSLayoutAttributeCenterX
                                                          multiplier:1
                                                            constant:0]];
+}
+
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    // update content view height by bottom margin view
+    CGFloat currentContentViewHeight;
+    UIView *bottomMarginView = bottomMarginView = self.contentView.buttonLeft;
+    if (!self.contentView.buttonLeft.superview) {
+        bottomMarginView = self.contentView.imageView;
+    }
+    currentContentViewHeight = CGRectGetMaxY(bottomMarginView.frame) + 10;
+    
+    if (self.conentViewHeightConstraint.constant != currentContentViewHeight) {
+        self.conentViewHeightConstraint.constant = currentContentViewHeight;
+        [self.view setNeedsLayout];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

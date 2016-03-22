@@ -37,12 +37,12 @@
     }];
     
     // Animation Image
-    NSMutableArray *animationImages = [NSMutableArray array];
-    for (int i = 1; i<= 35; i++) {
-        UIImage *animImage = [UIImage imageNamed:[NSString stringWithFormat:@"match%d",i]];
-        [animationImages addObject:animImage];
-    }
-    alertController.alertAnimationImages = [animationImages copy];
+//    NSMutableArray *animationImages = [NSMutableArray array];
+//    for (int i = 1; i<= 35; i++) {
+//        UIImage *animImage = [UIImage imageNamed:[NSString stringWithFormat:@"match%d",i]];
+//        [animationImages addObject:animImage];
+//    }
+//    alertController.alertAnimationImages = [animationImages copy];
     
     // Customize
 //    alertController.contentView.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];

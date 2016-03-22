@@ -18,27 +18,6 @@
     return [[[NSBundle mainBundle] loadNibNamed:@"FEAlertContentView" owner:nil options:nil] firstObject];
 }
 
--(CGSize)intrinsicContentSize{
-    
-    // layout
-    [self layoutIfNeeded];
-    
-    // Width
-    CGFloat contentViewWidth = 258.0;
-    if (!self.buttonLeft.superview) {
-        contentViewWidth = 220.0;
-    }
-    
-    // Height
-    UIView *bottomMarginView = bottomMarginView = self.buttonLeft;
-    if (!self.buttonLeft.superview) {
-        bottomMarginView = self.imageView;
-    }
-    CGFloat contentViewHeight = CGRectGetMaxY(bottomMarginView.frame) + 25;
-    
-    return CGSizeMake(contentViewWidth, contentViewHeight);
-}
-
 #pragma mark Action
 
 - (IBAction)buttonAction:(UIButton *)sender {
