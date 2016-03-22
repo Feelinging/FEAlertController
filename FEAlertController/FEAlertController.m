@@ -162,10 +162,32 @@
         viewController.modalPresentationStyle = UIModalPresentationCurrentContext;
     }
 
-    //
+    // layout
     [self prepareDisplay];
     
-    [viewController presentViewController:self animated:YES completion:nil];
+    // prepare for amiation
+    self.contentView.alpha = 0.0;
+    self.view.alpha = 0.0;
+    
+    // present
+    [viewController presentViewController:self animated:NO completion:^{
+        // animation background
+        [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            self.view.alpha = 1.0;
+        } completion:nil];
+        
+        // animation content view
+        self.contentView.transform = CGAffineTransformMakeScale(1.2, 1.2);
+        [UIView animateWithDuration:0.15
+                              delay:0
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.contentView.alpha = 1.0;
+                             self.contentView.transform = CGAffineTransformIdentity;
+                         }
+                         completion:nil];
+        
+    }];
 }
 
 -(void)tapBackgroundAction{
