@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -80,7 +80,7 @@
                 <constraint firstItem="er0-zg-fIK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="800" constant="10" id="SFA-tN-6UM"/>
                 <constraint firstItem="0y5-7D-TfE" firstAttribute="height" secondItem="g9j-Dl-dnF" secondAttribute="height" id="T52-n0-yBU"/>
                 <constraint firstItem="er0-zg-fIK" firstAttribute="top" secondItem="ThD-Gh-aDf" secondAttribute="bottom" constant="8" id="W70-lU-F1a"/>
-                <constraint firstItem="er0-zg-fIK" firstAttribute="top" secondItem="SqO-lp-mdY" secondAttribute="bottom" priority="900" constant="30" id="XEN-BU-1Ak"/>
+                <constraint firstItem="er0-zg-fIK" firstAttribute="top" secondItem="SqO-lp-mdY" secondAttribute="bottom" priority="900" constant="25" id="XEN-BU-1Ak"/>
                 <constraint firstItem="0y5-7D-TfE" firstAttribute="leading" secondItem="g9j-Dl-dnF" secondAttribute="trailing" constant="10" id="Xst-Gy-xfD"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="width" secondItem="0y5-7D-TfE" secondAttribute="width" id="ZfE-7p-EVV"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="aZK-SX-2Lc"/>
