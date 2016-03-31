@@ -201,7 +201,17 @@
 }
 
 -(void)dismiss{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        // iOS7
+        // animation background
+        [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            self.view.alpha = 0;
+        } completion:^(BOOL finished) {
+            [self dismissViewControllerAnimated:NO completion:nil];
+        }];
+    }
 }
 
 #pragma mark -
