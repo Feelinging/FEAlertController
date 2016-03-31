@@ -91,8 +91,12 @@
     currentContentViewHeight = CGRectGetMaxY(bottomMarginView.frame) + 10;
     
     if (self.conentViewHeightConstraint.constant != currentContentViewHeight) {
-        self.conentViewHeightConstraint.constant = currentContentViewHeight;
-        [self.view setNeedsLayout];
+        
+        // for iOS7, go to main dispatch queue
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.conentViewHeightConstraint.constant = currentContentViewHeight;
+            [self.view setNeedsLayout];
+        });
     }
 }
 
@@ -221,7 +225,7 @@
         [alertButtons removeObjectsInRange:NSMakeRange(1, [alertButtons count]-2)];
     }else if ([alertButtons count] == 1) {
         [self.contentView.buttonRight removeFromSuperview];
-        self.contentView.buttonLeftLeadingConstraint.active = NO;
+        [self.contentView removeConstraint:self.contentView.buttonLeftLeadingConstraint];
     }else if (self.alertButtons == 0){
         [self.contentView.buttonLeft removeFromSuperview];
         [self.contentView.buttonRight removeFromSuperview];
