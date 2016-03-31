@@ -9,6 +9,8 @@
 #import "FEAlertController.h"
 #import "FEAlertContentView.h"
 
+#define FEAlertiOS8Later (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0)
+
 @interface FEAlertController ()<UIGestureRecognizerDelegate,FEAlertContentViewDelegate>
 
 @property (nonatomic, copy) FEAlertControllerCallback callback;
@@ -158,7 +160,7 @@
 
 -(void)showInViewController:(UIViewController *)viewController{
     // present style
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
+    if (FEAlertiOS8Later) {
         // iOS8+
         self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
@@ -201,7 +203,7 @@
 }
 
 -(void)dismiss{
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
+    if (FEAlertiOS8Later) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }else{
         // iOS7
