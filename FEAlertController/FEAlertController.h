@@ -47,7 +47,26 @@ typedef void(^FEAlertControllerCallback)(FEAlertController *alertController, NSI
          highlightButtonIndex:(NSInteger)highlightButtonIndex
                      callback:(FEAlertControllerCallback)callback;
 
+/**
+ *  initialize method, the alert will show on a new window
+ *
+ *  @param title       At the top of the central
+ *  @param image       a photo
+ *  @param description some text
+ *  @param buttons     The operation button list
+ *  @param callback    callback when tap operation button
+ *
+ *  @return a alert ready to present
+ */
++ (instancetype)showWithTitle:(NSString *)title
+                        image:(UIImage *)image
+                  description:(NSString *)description
+                      buttons:(NSArray *)buttons
+         highlightButtonIndex:(NSInteger)highlightButtonIndex
+                     callback:(FEAlertControllerCallback)callback;
+
 -(void)showInViewController:(UIViewController *)viewController;
+
 -(void)dismiss;
 
 @end

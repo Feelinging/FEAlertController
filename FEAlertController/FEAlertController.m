@@ -16,10 +16,26 @@
 @property (nonatomic, copy) FEAlertControllerCallback callback;
 @property (nonatomic, strong) NSLayoutConstraint *conentViewHeightConstraint;
 
+
+
+@property (nonatomic, weak) UIWindow *fromWindow;
+@property (nonatomic, strong) UIWindow *alertWindow;
+
 @end
 
 @implementation FEAlertController
 
+#pragma mark initialize
++ (instancetype)showWithTitle:(NSString *)title image:(UIImage *)image description:(NSString *)description buttons:(NSArray *)buttons highlightButtonIndex:(NSInteger)highlightButtonIndex callback:(FEAlertControllerCallback)callback {
+    FEAlertController *alert = [self alertWithTitle:title image:image description:description buttons:buttons highlightButtonIndex:highlightButtonIndex callback:callback];
+    
+    [alert showInNewWindow];
+    
+    return alert;
+}
+
+
+#pragma mark lifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -158,6 +174,26 @@
     return alertController;
 }
 
+
+- (void)showInNewWindow {
+    // 记录
+    self.fromWindow = [UIApplication sharedApplication].keyWindow;
+    
+    UIWindow *newWindow = [[UIWindow alloc] init];
+    newWindow.bounds = [UIScreen mainScreen].bounds;
+    newWindow.backgroundColor = [UIColor clearColor];
+    newWindow.windowLevel = self.fromWindow.windowLevel + 1;
+    self.alertWindow = newWindow;
+    
+    UIViewController *wrapper = [[UIViewController alloc] init];
+    wrapper.view.backgroundColor = [UIColor clearColor];
+    newWindow.rootViewController= wrapper;
+    
+    [self.alertWindow makeKeyAndVisible];
+    
+    [self showInViewController:wrapper];
+}
+
 -(void)showInViewController:(UIViewController *)viewController{
     // present style
     if (FEAlertiOS8Later) {
@@ -203,6 +239,8 @@
 }
 
 -(void)dismiss{
+    
+    
     if (FEAlertiOS8Later) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }else{
@@ -211,7 +249,15 @@
         [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
             self.view.alpha = 0;
         } completion:^(BOOL finished) {
-            [self dismissViewControllerAnimated:NO completion:nil];
+            [self dismissViewControllerAnimated:NO completion:^{
+                // if has alertWindow
+                if (self.alertWindow) {
+                    [self.alertWindow resignKeyWindow];
+                    self.alertWindow = nil;
+                    
+                    [self.fromWindow makeKeyAndVisible];
+                }
+            }];
         }];
     }
 }
