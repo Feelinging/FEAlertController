@@ -11,6 +11,20 @@
 
 #define FEAlertiOS8Later (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0)
 
+static inline BOOL FE_checkTextValid(id text) {
+    if ([text isKindOfClass:[NSString class]] || [text isKindOfClass:[NSAttributedString class]]) {
+        return YES;
+    }
+    return NO;
+}
+
+static inline BOOL FE_isAttributedString(id text) {
+    if ([text isKindOfClass:[NSAttributedString class]]) {
+        return YES;
+    }
+    return NO;
+}
+
 @interface FEAlertController ()<UIGestureRecognizerDelegate,FEAlertContentViewDelegate>
 
 @property (nonatomic, copy) FEAlertControllerCallback callback;
@@ -129,8 +143,26 @@
     if (!_contentView) {
         _contentView = [FEAlertContentView instanceWithXIB];
         _contentView.delegate = self;
-        _contentView.titleLabel.text = self.alertTitle;
-        _contentView.descriptionLabel.text = self.alertDescription;
+        
+        if (FE_isAttributedString(self.alertTitle)) {
+            _contentView.titleLabel.attributedText = self.alertTitle;
+        }
+        else {
+            _contentView.titleLabel.text = self.alertTitle;
+        }
+        
+        if (FE_isAttributedString(self.alertDescription)) {
+            _contentView.descriptionLabel.attributedText = self.alertDescription;
+        }
+        else {
+            // important
+            if (!_contentView.descriptionLabel.textColor) {
+                _contentView.descriptionLabel.textColor = [[FEAlertContentView appearance] descriptionTextColor];
+            }
+            
+            _contentView.descriptionLabel.text = self.alertDescription;
+        }
+        
         _contentView.clipsToBounds = YES;
         
         // image or images
@@ -156,9 +188,9 @@
 
 +(instancetype)alertWithTitle:(NSString *)title image:(UIImage *)image description:(NSString *)description buttons:(NSArray *)buttons highlightButtonIndex:(NSInteger)highlightButtonIndex callback:(FEAlertControllerCallback)callback{
     FEAlertController *alertController = [[FEAlertController alloc] init];
-    alertController.alertTitle = title;
+    alertController.alertTitle = FE_checkTextValid(title)?title:nil;
     alertController.alertImage = image;
-    alertController.alertDescription = description;
+    alertController.alertDescription = FE_checkTextValid(description)?description:nil;
     alertController.alertButtons = buttons;
     
     // highlightButtonIndex
@@ -173,7 +205,6 @@
     alertController.callback = callback;
     return alertController;
 }
-
 
 - (void)showInNewWindow {
     // 记录

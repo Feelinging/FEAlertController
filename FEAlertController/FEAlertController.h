@@ -17,10 +17,10 @@ typedef void(^FEAlertControllerCallback)(FEAlertController *alertController, NSI
 
 @property (nonatomic, strong) FEAlertContentView *contentView;
 
-@property (nonatomic, copy) NSString *alertTitle;
+@property (nonatomic, copy) id alertTitle;  // NSString or NSAttributedString
 @property (nonatomic, strong) UIImage *alertImage;
 @property (nonatomic, strong) NSArray *alertAnimationImages; // for animation
-@property (nonatomic, copy) NSString *alertDescription;
+@property (nonatomic, copy) id alertDescription;  // NSString or NSAttributedString
 @property (nonatomic, strong) NSArray *alertButtons;
 @property (nonatomic, assign) NSInteger highlightButtonIndex;
 
@@ -40,9 +40,9 @@ typedef void(^FEAlertControllerCallback)(FEAlertController *alertController, NSI
  *
  *  @return a alert ready to present
  */
-+(instancetype)alertWithTitle:(NSString *)title
++(instancetype)alertWithTitle:(id)title
                         image:(UIImage *)image
-                  description:(NSString *)description
+                  description:(id)description
                       buttons:(NSArray *)buttons
          highlightButtonIndex:(NSInteger)highlightButtonIndex
                      callback:(FEAlertControllerCallback)callback;
@@ -58,9 +58,9 @@ typedef void(^FEAlertControllerCallback)(FEAlertController *alertController, NSI
  *
  *  @return a alert ready to present
  */
-+ (instancetype)showWithTitle:(NSString *)title
++ (instancetype)showWithTitle:(id)title
                         image:(UIImage *)image
-                  description:(NSString *)description
+                  description:(id)description
                       buttons:(NSArray *)buttons
          highlightButtonIndex:(NSInteger)highlightButtonIndex
                      callback:(FEAlertControllerCallback)callback;

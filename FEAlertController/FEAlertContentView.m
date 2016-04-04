@@ -33,12 +33,6 @@
     self.layer.cornerRadius = cornerRadius;
 }
 
--(void)setDescriptionTextColor:(UIColor *)descriptionTextColor{
-    _descriptionTextColor = descriptionTextColor;
-    
-    self.descriptionLabel.textColor = descriptionTextColor;
-}
-
 #pragma mark -
 
 -(void)highlightButtonByIndex:(NSInteger)buttonIndex{
