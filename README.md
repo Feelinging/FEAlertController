@@ -32,7 +32,6 @@ FEAlertController *alertController = [FEAlertController alertWithTitle:@"What ar
                                                   highlightButtonIndex:1
                                                               callback:^(FEAlertController *alertController, NSInteger buttonIndex) {
                                                                   NSLog(@"click button index : %@", @(buttonIndex));
-                                                                  [alertController dismiss];
 }];
 ```
 

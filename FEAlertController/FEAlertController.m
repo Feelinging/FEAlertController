@@ -334,6 +334,10 @@ static inline BOOL FE_isAttributedString(id text) {
 #pragma mark FEAlertContentViewDelegate
 
 -(void)alertControllerButtonAction:(UIButton *)button{
+    // Dismiss
+    [self dismiss];
+    
+    // Callback
     NSInteger clickButtonIndex = (button == self.contentView.buttonLeft ? 0 : 1);
     if (self.callback) {
         self.callback(self,clickButtonIndex);
