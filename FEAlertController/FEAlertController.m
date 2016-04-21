@@ -273,7 +273,15 @@ static inline BOOL FE_isAttributedString(id text) {
     
     
     if (FEAlertiOS8Later) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:^{
+            // if has alertWindow
+            if (self.alertWindow) {
+                [self.alertWindow resignKeyWindow];
+                self.alertWindow = nil;
+                
+                [self.fromWindow makeKeyAndVisible];
+            }
+        }];
     }else{
         // iOS7
         // animation background
