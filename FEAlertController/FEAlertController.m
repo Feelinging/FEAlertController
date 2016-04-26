@@ -211,7 +211,7 @@ static inline BOOL FE_isAttributedString(id text) {
     self.fromWindow = [UIApplication sharedApplication].keyWindow;
     
     UIWindow *newWindow = [[UIWindow alloc] init];
-    newWindow.bounds = [UIScreen mainScreen].bounds;
+    newWindow.frame = [UIScreen mainScreen].bounds;
     newWindow.backgroundColor = [UIColor clearColor];
     newWindow.windowLevel = self.fromWindow.windowLevel + 1;
     self.alertWindow = newWindow;
