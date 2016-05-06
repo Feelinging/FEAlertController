@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -68,14 +68,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="er0-zg-fIK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0bf-Tp-ksl"/>
+                <constraint firstItem="er0-zg-fIK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" priority="750" id="0bf-Tp-ksl"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1TK-Di-SaE"/>
                 <constraint firstItem="ThD-Gh-aDf" firstAttribute="top" secondItem="SqO-lp-mdY" secondAttribute="bottom" constant="20" id="1Ye-uU-HoN"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ThD-Gh-aDf" secondAttribute="bottom" priority="900" constant="30" id="40w-OH-Cir"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" secondItem="er0-zg-fIK" secondAttribute="bottom" constant="15" id="Ct3-jz-vth"/>
                 <constraint firstItem="SqO-lp-mdY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="29" id="Dwo-Xt-0d1"/>
                 <constraint firstItem="SqO-lp-mdY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IKJ-dG-cuF"/>
-                <constraint firstItem="er0-zg-fIK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="J57-gF-A1L"/>
+                <constraint firstItem="er0-zg-fIK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" priority="750" constant="15" id="J57-gF-A1L"/>
                 <constraint firstItem="0y5-7D-TfE" firstAttribute="top" secondItem="g9j-Dl-dnF" secondAttribute="top" id="P44-ab-F8O"/>
                 <constraint firstItem="er0-zg-fIK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="800" constant="10" id="SFA-tN-6UM"/>
                 <constraint firstItem="0y5-7D-TfE" firstAttribute="height" secondItem="g9j-Dl-dnF" secondAttribute="height" id="T52-n0-yBU"/>
@@ -89,7 +89,7 @@
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" priority="900" id="dpU-kR-jdL"/>
                 <constraint firstItem="g9j-Dl-dnF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SqO-lp-mdY" secondAttribute="bottom" constant="30" id="f27-QT-Qh4"/>
                 <constraint firstItem="ThD-Gh-aDf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mL3-4X-4nE"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="er0-zg-fIK" secondAttribute="trailing" constant="15" id="nQ4-4b-jPe"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="er0-zg-fIK" secondAttribute="trailing" priority="750" constant="15" id="nQ4-4b-jPe"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
