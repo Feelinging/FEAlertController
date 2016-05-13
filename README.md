@@ -62,7 +62,9 @@ alertController.contentView.descriptionLabel.textColor = [UIColor redColor];
 
 ### CocoaPods
 
-Will be soon...
+```
+pod 'FEAlertController'
+```
 
 ### Licence
 
