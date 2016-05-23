@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3FDD3F1CF2F4E800AC2C14 /* FEAlertControllerAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3FDD3E1CF2F4E800AC2C14 /* FEAlertControllerAnimatedTransitioning.m */; };
 		0BC760381C7D54C200576F94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC760371C7D54C200576F94 /* Images.xcassets */; };
 		0BD4B8061C7C0FD1003313D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4B8051C7C0FD1003313D0 /* main.m */; };
 		0BD4B8091C7C0FD1003313D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4B8081C7C0FD1003313D0 /* AppDelegate.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B3FDD3D1CF2F4E800AC2C14 /* FEAlertControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEAlertControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
+		0B3FDD3E1CF2F4E800AC2C14 /* FEAlertControllerAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEAlertControllerAnimatedTransitioning.m; sourceTree = "<group>"; };
 		0BC760371C7D54C200576F94 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0BD4B8011C7C0FD1003313D0 /* FEAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FEAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD4B8051C7C0FD1003313D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 				0BD4B82A1C7C2E37003313D0 /* FEAlertContentView.xib */,
 				0BD4B82B1C7C2E37003313D0 /* FEAlertController.h */,
 				0BD4B82C1C7C2E37003313D0 /* FEAlertController.m */,
+				0B3FDD3D1CF2F4E800AC2C14 /* FEAlertControllerAnimatedTransitioning.h */,
+				0B3FDD3E1CF2F4E800AC2C14 /* FEAlertControllerAnimatedTransitioning.m */,
 			);
 			name = FEAlertController;
 			path = ../FEAlertController;
@@ -176,6 +181,7 @@
 				0BD4B80C1C7C0FD1003313D0 /* ViewController.m in Sources */,
 				0BD4B8091C7C0FD1003313D0 /* AppDelegate.m in Sources */,
 				0BD4B8061C7C0FD1003313D0 /* main.m in Sources */,
+				0B3FDD3F1CF2F4E800AC2C14 /* FEAlertControllerAnimatedTransitioning.m in Sources */,
 				0BD4B82F1C7C2E37003313D0 /* FEAlertController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

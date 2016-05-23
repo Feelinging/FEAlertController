@@ -8,6 +8,7 @@
 
 #import "FEAlertController.h"
 #import "FEAlertContentView.h"
+#import "FEAlertControllerAnimatedTransitioning.h"
 
 #define FEAlertiOS8Later (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0)
 
@@ -229,7 +230,7 @@ static inline BOOL FE_isAttributedString(id text) {
     // present style
     if (FEAlertiOS8Later) {
         // iOS8+
-        self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        self.modalPresentationStyle = UIModalPresentationCustom;
         self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     }else{
         viewController.modalPresentationStyle = UIModalPresentationCurrentContext;
@@ -350,6 +351,20 @@ static inline BOOL FE_isAttributedString(id text) {
     if (self.callback) {
         self.callback(self,clickButtonIndex);
     }
+}
+
+#pragma mark <UIViewControllerAnimatedTransitioning>
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    FEAlertControllerAnimatedTransitioning *transitioning = [FEAlertControllerAnimatedTransitioning new];
+    return transitioning;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    FEAlertControllerAnimatedTransitioning * transitioning = [FEAlertControllerAnimatedTransitioning new];
+    return transitioning;
 }
 
 @end
